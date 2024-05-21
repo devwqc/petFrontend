@@ -5,7 +5,7 @@ export default function MainLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      {children}
     </>
   );
 }
