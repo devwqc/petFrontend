@@ -22,6 +22,7 @@ export default function Dropdown({ options, placeholder }: DropdownProps) {
   return (
     <>
       <Select
+        className={styles.dropdown}
         options={options}
         value={selectedOption}
         onChange={handleChange}
