@@ -14,7 +14,6 @@ export default function Button({ size, text, backgroundColor, onClick }: ButtonP
 
   return (
     <>
-      <div>Button</div>
       <button className={className} onClick={onClick}>
         {text}
       </button>

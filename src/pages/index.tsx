@@ -1,4 +1,5 @@
 import MainLayout from '@/components/common/Layout/Main';
+import Button from '@/components/common/Button';
 import styles from './Home.module.scss';
 
 export default function HomePage() {
