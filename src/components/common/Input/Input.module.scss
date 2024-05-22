@@ -1,0 +1,36 @@
+@layer overrides {
+  .small {
+    width: 5rem;
+  }
+
+  .medium {
+    width: 10rem;
+  }
+
+  .large {
+    width: 15rem;
+  }
+
+  .label {
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 60px;
+  }
+
+  .inputWithLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .error {
+    border: 0.1rem red solid;
+  }
+
+  .errorText {
+    color: red;
+    font-size: 0.8rem;
+  }
+}
