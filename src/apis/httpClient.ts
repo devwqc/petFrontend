@@ -1,6 +1,6 @@
 import axiosInstance from './axiosInstance';
 
-export const createHttpClient = () => {
+export function httpClient() {
   async function get<R>(url: string, options?: { params?: any; headers?: any }) {
     try {
       const response = await axiosInstance.get<R>(url, options);
@@ -32,4 +32,4 @@ export const createHttpClient = () => {
     put,
     delete: del,
   };
-};
+}
