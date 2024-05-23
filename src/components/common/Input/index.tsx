@@ -32,7 +32,7 @@ export default function Input() {
         label=" "
         labelStyle={cx('label')}
         placeholder="검색어를 입력해주세요"
-        image={{}}
+        imageProps={{}}
         background={cx('background')}
       />
   3. 사이즈 작은 검색 인풋
@@ -44,7 +44,7 @@ export default function Input() {
         label=" "
         labelStyle={cx('label')}
         placeholder="검색어를 입력해주세요"
-        image={{}}
+        imageProps={{}}
         background={cx('background')}
       /> */
 }

@@ -7,22 +7,20 @@ interface InputProps {
   id: string;
   type: string;
   label?: string;
-  value?: string | number;
   size?: string;
   border?: string;
   isError?: boolean;
   errorText?: string;
   labelStyle?: string;
   placeholder: string;
-  image?: Omit<ImageProps, 'src' | 'alt'>;
-  imageClick?: () => void;
+  imageProps?: Partial<ImageProps>;
   background?: string;
 }
 
 const cx = classNames.bind(styles);
 
 const InputLayout = forwardRef<HTMLInputElement, InputProps>(function InputLayout(
-  { id, label, isError, errorText, labelStyle, size, border, image, background, imageClick, ...rest },
+  { id, label, isError, errorText, labelStyle, size, border, imageProps, background, ...rest },
   ref
 ) {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -39,19 +37,19 @@ const InputLayout = forwardRef<HTMLInputElement, InputProps>(function InputLayou
       )}
       <div className={cx('inputWithIcon', size)}>
         <input
-          ref={ref as React.RefObject<HTMLInputElement>}
+          ref={ref}
           className={cx(border, { error: isError }, size, background)}
           onChange={handleChange}
           {...rest}
         />
-        {image && (
+        {imageProps && (
           <Image
             src="/images/search.svg"
             alt="검색 아이콘"
             width={24}
             height={24}
             className={cx('icon')}
-            onClick={imageClick}
+            {...imageProps}
           />
         )}
       </div>
