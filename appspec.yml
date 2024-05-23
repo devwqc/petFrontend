@@ -1,18 +1,16 @@
 version: 0.0
 os: linux
-
 files:
   - source: /
     destination: /home/ubuntu/deploy-fe
     overwrite: yes
-file_exists_behavior: OVERWRITE
 permissions:
   - object: /home/ubuntu/deploy-fe
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
     mode: 755
 hooks:
   AfterInstall:
     - location: deploy.sh
-      timeout: 60
+      timeout: 1000
       runas: root
