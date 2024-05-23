@@ -2,12 +2,12 @@ import styles from './Button.module.scss';
 
 interface ButtonProps {
   size: 'large' | 'medium';
-  text: string;
+  children?: React.ReactNode;
   backgroundColor: '#545454' | '#FFFFFF';
   onClick?: () => void;
 }
 
-export default function Button({ size, text, backgroundColor, onClick }: ButtonProps) {
+export default function Button({ size, children, backgroundColor, onClick }: ButtonProps) {
   const sizeClass = styles[size];
   const backgroundClass = backgroundColor === '#545454' ? styles.backgroundBlack : styles.backgroundWhite;
   const className = `${styles.button} ${sizeClass} ${backgroundClass}`;
@@ -15,7 +15,7 @@ export default function Button({ size, text, backgroundColor, onClick }: ButtonP
   return (
     <>
       <button className={className} onClick={onClick}>
-        {text}
+        {children}
       </button>
     </>
   );
