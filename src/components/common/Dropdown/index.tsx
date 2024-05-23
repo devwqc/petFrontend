@@ -25,13 +25,14 @@ export default function Dropdown({ size, options, placeholder, ...rest }: Dropdo
 
   return (
     <>
-      <input type="hidden" value={selectedOption?.value} {...rest} />
+      <input type="hidden" value={selectedOption ? selectedOption.value : ''} {...rest} />
       <Select
         className={`${styles.dropdown} ${sizeClass}`}
         options={options}
         value={selectedOption}
         onChange={handleChange}
         placeholder={placeholder || '옵션'}
+        instanceId="unique-instance-id"
       />
     </>
   );
