@@ -10,19 +10,24 @@ interface Option {
 interface DropdownProps {
   options: Option[];
   placeholder?: string;
+  size: 'large' | 'small';
+  [key: string]: any;
 }
 
-export default function Dropdown({ options, placeholder }: DropdownProps) {
+export default function Dropdown({ size, options, placeholder, ...rest }: DropdownProps) {
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
+  const sizeClass = styles[size];
 
   const handleChange = (option: Option | null) => {
     setSelectedOption(option);
+    console.log(option);
   };
 
   return (
     <>
+      <input type="hidden" value={selectedOption?.value} {...rest} />
       <Select
-        className={styles.dropdown}
+        className={`${styles.dropdown} ${sizeClass}`}
         options={options}
         value={selectedOption}
         onChange={handleChange}
