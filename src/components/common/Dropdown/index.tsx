@@ -26,7 +26,7 @@ export default function Dropdown({ options, placeholder }: DropdownProps) {
         options={options}
         value={selectedOption}
         onChange={handleChange}
-        placeholder={placeholder || '상품 옵션을 선택해 주세요'}
+        placeholder={placeholder || '옵션'}
       />
     </>
   );
