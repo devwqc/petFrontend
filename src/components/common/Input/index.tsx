@@ -9,13 +9,13 @@ export default function Input() {
     <>
       <InputLayout
         id=""
-        type="email"
+        type="text"
         size={cx('large')}
         isError={true}
-        errorText="이메일을 확인해주세요"
-        label="이메일"
+        errorText="닉네임은 30자 내외입니다"
+        label=" "
         labelStyle={cx('label')}
-        placeholder="이메일을 입력해주세요"
+        placeholder="닉네임을 입력해주세요"
       />
       <InputLayout
         id=""
