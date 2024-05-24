@@ -15,8 +15,8 @@ export default function ImageBox({ size, src, alt, disabled, ...rest }: ImageBox
   return (
     <>
       {disabled && <div className={cx('disabled', size)} />}
-      <div className={cx('imageBox', size)} {...rest}>
-        <Image src={src} alt={alt} fill />
+      <div className={cx('imageBox', size)}>
+        <Image src={src} alt={alt} fill {...rest} />
       </div>
     </>
   );
