@@ -1,8 +1,8 @@
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import classNames from 'classnames/bind';
 import styles from './ImageBox.module.scss';
 
-interface ImageBox {
+interface ImageBox extends ImageProps {
   size: string;
   src: string;
   alt: string;
@@ -11,12 +11,12 @@ interface ImageBox {
 
 const cx = classNames.bind(styles);
 
-export default function ImageBox({ size, src, alt, disabled, ...rest }: ImageBox) {
+export default function ImageBox({ size, src, alt, disabled, ...props }: ImageBox) {
   return (
     <>
       {disabled && <div className={cx('disabled', size)} />}
       <div className={cx('imageBox', size)}>
-        <Image src={src} alt={alt} fill {...rest} />
+        <Image src={src} alt={alt} fill {...props} />
       </div>
     </>
   );
