@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 export default function ImageBox() {
   return (
     <>
-      <ImageLayout size={cx('my')} src="/images/search.svg" alt="검색 아이콘" />
+      <ImageLayout size={cx('my')} src="/images/search.svg" alt="검색 아이콘" disabled />
     </>
   );
 }

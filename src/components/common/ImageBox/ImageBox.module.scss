@@ -1,6 +1,12 @@
 @layer components {
   .imageBox {
     position: relative;
+
+    &.disabled {
+      color: gray;
+      opacity: 50%;
+      z-index: 2;
+    }
   }
 
   .my {
